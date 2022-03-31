@@ -8,6 +8,8 @@ import static education.cccp.tp11listview.R.layout.activity_second;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -20,10 +22,10 @@ import education.cccp.tp11listview.model.Person;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private ListView personsListView;
     public static final String PERSON_KEY = "person_key";
 
     private void logPersons() {
+        //noinspection unchecked
         Log.d(SecondActivity.class.getSimpleName(),
                 ((List<Person>) getIntent().getSerializableExtra(PERSONS_KEY))
                         .toArray()[0]
@@ -34,13 +36,18 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_second);
-        personsListView = findViewById(personListViewId);
+        ListView personsListView = findViewById(personListViewId);
         logPersons();
+        //noinspection unchecked
         personsListView.setAdapter(new ArrayAdapter<>(this,
                 simple_list_item_1,
-                (List<Person>) getIntent().getSerializableExtra(PERSONS_KEY)));
+                (List<Person>) getIntent()
+                        .getSerializableExtra(PERSONS_KEY)));
 
-        personsListView.setOnItemClickListener((adapterView, view, index, l) -> {
+        personsListView.setOnItemClickListener((AdapterView<?> adapterView,
+                                                View view,
+                                                int index,
+                                                long l) -> {
             //retrieve person's clicked
             setResult(RESULT_OK,
                     new Intent().putExtra(
@@ -50,6 +57,5 @@ public class SecondActivity extends AppCompatActivity {
                     ));
             finish();
         });
-
     }
 }
