@@ -37,5 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 SecondActivity.class)
                 .putExtra(PERSONS_KEY,
                         (Serializable) getAllPersonnes()));
+
     }
 }

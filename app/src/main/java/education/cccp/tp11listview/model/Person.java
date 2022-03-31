@@ -13,4 +13,14 @@ public class Person implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    @Override
+    public String toString() {
+        return new StringBuilder("Person{")
+                .append("id=").append(id)
+                .append(", firstName='").append(firstName).append('\'')
+                .append(", lastName='").append(lastName).append('\'')
+                .append('}')
+                .toString();
+    }
 }

@@ -7,7 +7,7 @@
     tools:context=".SecondActivity">
 
     <ListView
-        android:id="@+id/listViewId"
+        android:id="@+id/personListViewId"
         android:layout_width="340dp"
         android:layout_height="626dp"
         app:layout_constraintBottom_toBottomOf="parent"
