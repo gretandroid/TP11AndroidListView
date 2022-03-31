@@ -8,8 +8,9 @@ import education.cccp.tp11listview.model.Person;
 public class PersonDao {
     private static final List<Person> persons = new ArrayList<>();
 
-    public static void addPerson(Person p) {
-        persons.add(p);
+    public static Person addPerson(Person p) throws Exception {
+        if (persons.add(p)) return p;
+        else throw new Exception("malformed exception");
     }
 
     public static List<Person> getAllPersonnes() {

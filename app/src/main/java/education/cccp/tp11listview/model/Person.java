@@ -1,19 +1,23 @@
 package education.cccp.tp11listview.model;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class Person implements Serializable {
     static final long serialVersionUID = 1L;
-    private Integer id;
-    private String firstName;
-    private String lastName;
+    private final Integer id;
+    private final String firstName;
+    private final String lastName;
 
-    public Person(Integer id, String firstName, String lastName) {
-        this.id = id;
+    public Person(String firstName,
+                  String lastName) {
+        this.id = 1;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return new StringBuilder("Person{")
