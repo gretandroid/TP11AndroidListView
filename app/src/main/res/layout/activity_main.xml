@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginTop="22dp"
-        android:text="TextView"
+        android:text="First name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,38 +21,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:text="TextView"
+        android:text="Last name"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextPersonFirstNameId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
         android:ems="10"
+        android:hint="full fill with your first name"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editTextPersonLastNameId"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="22dp"
         android:ems="10"
+        android:hint="full fill with your last name"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonFirstNameId"
         app:layout_constraintStart_toEndOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/saveButtonId"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+        android:onClick="onClickSaveButonEvent"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonLastNameId"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonLastNameId" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
