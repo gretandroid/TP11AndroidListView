@@ -51,44 +51,49 @@
         app:layout_constraintStart_toEndOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/saveButtonId"
+        android:id="@+id/createButtonId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:onClick="onClickSaveButtonEvent"
+        android:onClick="onClickCreateButtonEvent"
         android:text="CREATE"
         app:layout_constraintEnd_toEndOf="@+id/editTextPersonLastNameId"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/editTextPersonLastNameId" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/editButtonId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
+        android:onClick="onClickEditButtonEvent"
         android:text="Edit"
-        app:layout_constraintEnd_toEndOf="@+id/saveButtonId"
-        app:layout_constraintStart_toStartOf="@+id/saveButtonId"
-        app:layout_constraintTop_toBottomOf="@+id/saveButtonId" />
+        app:layout_constraintEnd_toEndOf="@+id/createButtonId"
+        app:layout_constraintStart_toStartOf="@+id/createButtonId"
+        app:layout_constraintTop_toBottomOf="@+id/createButtonId" />
+
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/deleteButtonId"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
+        android:onClick="onClickDeleteButtonEvent"
         android:text="DELETE"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/editButtonId"
+        app:layout_constraintStart_toStartOf="@+id/editButtonId"
+        app:layout_constraintTop_toBottomOf="@+id/editButtonId" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="0"
+        android:id="@+id/showAllButtonId"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
+        android:onClick="onClickShowAllButtonEvent"
         android:text="SHOW ALL"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/deleteButtonId"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toStartOf="@+id/deleteButtonId"
+        app:layout_constraintTop_toBottomOf="@+id/deleteButtonId" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
