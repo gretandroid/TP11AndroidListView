@@ -13,3 +13,6 @@ image:img/main_activity.png[MainActivity,width=340,height=580]
  +
 SecondActivity +
 image:img/second_activity.png[SecondActivity,width=340,height=580]
+ +
+ +
+image:img/diagram_intents.png[MainActivity,width=540,height=380]
