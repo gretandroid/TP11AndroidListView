@@ -4,6 +4,6 @@
 version avec un bouton.
 
 === exo sur la branche master
-utiliser 3 bouton en partant de la version un bouton +
+utiliser 3 bouton en partant de la version un bouton
 tel que le screen suivant: +
-image::img/screen_exo.png[but]
+image:img/screen_exo.png[exo]
