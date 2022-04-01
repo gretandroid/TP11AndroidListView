@@ -12,4 +12,4 @@ image:img/main_activity.png[MainActivity]
  +
  +
 SecondActivity +
-image:img/second_activity.png[SecondActivity]
+image:img/second_activity.png[SecondActivity,width=540,height=880]
