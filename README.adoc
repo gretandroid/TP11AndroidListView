@@ -7,4 +7,9 @@ version avec un bouton.
 utiliser 3 bouton en partant de la version un bouton
 tel que le screen suivant: +
  +
-image:img/screen_exo.png[exo]
+MainActivity +
+image:img/main_activity.png[MainActivity]
+ +
+ +
+SecondActivity +
+image:img/second_activity.png[SecondActivity]
