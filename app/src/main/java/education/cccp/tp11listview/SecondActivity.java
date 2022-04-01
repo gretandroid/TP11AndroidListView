@@ -52,7 +52,7 @@ public class SecondActivity extends AppCompatActivity {
             setResult(RESULT_OK,
                     new Intent().putExtra(
                             PERSON_KEY,
-                            PersonDao.getAllPersonnes()
+                            PersonDao.getAllPersons()
                                     .get(index)
                     ));
             finish();

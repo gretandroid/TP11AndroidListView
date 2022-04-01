@@ -7,7 +7,7 @@ import static education.cccp.tp11listview.R.id.editTextPersonLastNameId;
 import static education.cccp.tp11listview.R.layout.activity_main;
 import static education.cccp.tp11listview.SecondActivity.PERSON_KEY;
 import static education.cccp.tp11listview.controller.PersonDao.addPerson;
-import static education.cccp.tp11listview.controller.PersonDao.getAllPersonnes;
+import static education.cccp.tp11listview.controller.PersonDao.getAllPersons;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -63,6 +63,6 @@ public class MainActivity extends AppCompatActivity {
                         .toString()));
         intentLauncher.launch(new Intent(this,
                 SecondActivity.class).putExtra(PERSONS_KEY,
-                (Serializable) getAllPersonnes()));
+                (Serializable) getAllPersons()));
     }
 }

@@ -13,7 +13,7 @@ public class PersonDao {
         else throw new Exception("malformed exception");
     }
 
-    public static List<Person> getAllPersonnes() {
+    public static List<Person> getAllPersons() {
         return persons;
     }
 }
