@@ -8,7 +8,9 @@ import static education.cccp.tp11listview.R.id.editTextPersonLastNameId;
 import static education.cccp.tp11listview.R.layout.activity_main;
 import static education.cccp.tp11listview.SecondActivity.CURRENT_PERSON_INDEX_KEY;
 import static education.cccp.tp11listview.SecondActivity.CURRENT_PERSON_KEY;
-import static education.cccp.tp11listview.repositories.PersonDao.*;
+import static education.cccp.tp11listview.SecondActivity.OUT_OF_BOUND_INDEX;
+import static education.cccp.tp11listview.SecondActivity.PERSON_LIST_KEY;
+import static education.cccp.tp11listview.repositories.PersonDao.delete;
 import static education.cccp.tp11listview.repositories.PersonDao.findAll;
 import static education.cccp.tp11listview.repositories.PersonDao.save;
 
@@ -26,16 +28,13 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import education.cccp.tp11listview.models.Person;
-import education.cccp.tp11listview.repositories.PersonDao;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String PERSON_LIST_KEY = "person_list_key";
-    public static final int OUT_OF_BOUND_INDEX = -1;
-    public static final String EMPTY_FIELD = "";
 
+    public static final String EMPTY_FIELD = "";
     private EditText personFirstNameEditText;
     private EditText personLastNameEditText;
-    private int indiceSelected = OUT_OF_BOUND_INDEX;
+    private int currentIndex = OUT_OF_BOUND_INDEX;
     private ActivityResultLauncher<Intent> intentActivityResultLauncher;
 
     private void setEditTextPersonFields(String firstName, String lastName) {
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                                 .getSerializableExtra(CURRENT_PERSON_KEY);
                         setEditTextPersonFields(person.getFirstName(),
                                 person.getLastName());
-                        indiceSelected = data.getIntExtra(
+                        currentIndex = data.getIntExtra(
                                 CURRENT_PERSON_INDEX_KEY,
                                 OUT_OF_BOUND_INDEX);
                     }
@@ -67,12 +66,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickCreateButtonEvent(View view) throws Exception {
+        save(new Person(
+                personFirstNameEditText.getText().toString(),
+                personLastNameEditText.getText().toString()));
         makeText(this,
-                new StringBuilder("personne added")
-                        .append(save(new Person(
-                                personFirstNameEditText.getText().toString(),
-                                personLastNameEditText.getText().toString())))
-                        .toString(),
+                "person successfully added",
                 LENGTH_LONG)
                 .show();
         setEditTextPersonFields(EMPTY_FIELD,
@@ -88,22 +86,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickDeleteButtonEvent(View view) {
-        if (indiceSelected != OUT_OF_BOUND_INDEX) {
-            delete(indiceSelected);
+        if (currentIndex != OUT_OF_BOUND_INDEX) {
+            delete(currentIndex);
             setEditTextPersonFields(EMPTY_FIELD, EMPTY_FIELD);
             makeText(this,
-                    "person deleted",
+                    "person successfully deleted",
                     LENGTH_SHORT).show();
         }
     }
 
     public void onClickEditButtonEvent(View view) {
-        Person person = findAll().get(indiceSelected);
+        Person person = findAll().get(currentIndex);
         person.setLastName(personLastNameEditText.getText().toString());
         person.setFirstName(personFirstNameEditText.getText().toString());
-        save(indiceSelected, person);
+        save(currentIndex, person);
         makeText(this,
-                "personne modified",
+                "person successfully updated",
                 LENGTH_SHORT).show();
     }
 }

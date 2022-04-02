@@ -1,7 +1,6 @@
 package education.cccp.tp11listview;
 
 import static android.R.layout.simple_list_item_1;
-import static education.cccp.tp11listview.MainActivity.PERSON_LIST_KEY;
 import static education.cccp.tp11listview.R.id.personListViewId;
 import static education.cccp.tp11listview.R.layout.activity_second;
 import static education.cccp.tp11listview.repositories.PersonDao.findAll;
@@ -23,6 +22,9 @@ public class SecondActivity extends AppCompatActivity {
 
     public static final String CURRENT_PERSON_KEY = "current_person_key";
     public static final String CURRENT_PERSON_INDEX_KEY = "current_person_index_key";
+    public static final String PERSON_LIST_KEY = "person_list_key";
+    public static final int OUT_OF_BOUND_INDEX = -1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
