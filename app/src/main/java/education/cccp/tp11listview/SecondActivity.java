@@ -3,7 +3,7 @@ package education.cccp.tp11listview;
 import static android.R.layout.simple_list_item_1;
 import static education.cccp.tp11listview.R.id.personListViewId;
 import static education.cccp.tp11listview.R.layout.activity_second;
-import static education.cccp.tp11listview.repositories.PersonDao.findAll;
+import static education.cccp.tp11listview.dao.PersonDao.findAll;
 
 import android.content.Intent;
 import android.os.Bundle;

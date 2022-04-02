@@ -1,4 +1,4 @@
-package education.cccp.tp11listview.repositories;
+package education.cccp.tp11listview.dao;
 
 import java.util.ArrayList;
 import java.util.List;

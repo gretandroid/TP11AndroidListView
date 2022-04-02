@@ -10,9 +10,9 @@ import static education.cccp.tp11listview.SecondActivity.CURRENT_PERSON_INDEX_KE
 import static education.cccp.tp11listview.SecondActivity.CURRENT_PERSON_KEY;
 import static education.cccp.tp11listview.SecondActivity.OUT_OF_BOUND_INDEX;
 import static education.cccp.tp11listview.SecondActivity.PERSON_LIST_KEY;
-import static education.cccp.tp11listview.repositories.PersonDao.delete;
-import static education.cccp.tp11listview.repositories.PersonDao.findAll;
-import static education.cccp.tp11listview.repositories.PersonDao.save;
+import static education.cccp.tp11listview.dao.PersonDao.delete;
+import static education.cccp.tp11listview.dao.PersonDao.findAll;
+import static education.cccp.tp11listview.dao.PersonDao.save;
 
 import android.content.Intent;
 import android.os.Bundle;
