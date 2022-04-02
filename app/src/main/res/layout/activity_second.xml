@@ -16,4 +16,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backButtonId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:onClick="onClickBackButtonEvent"
+        android:text="BACK"
+        app:layout_constraintEnd_toEndOf="@+id/personListViewId"
+        app:layout_constraintStart_toStartOf="@+id/personListViewId"
+        app:layout_constraintTop_toBottomOf="@+id/personListViewId" />
 </androidx.constraintlayout.widget.ConstraintLayout>
