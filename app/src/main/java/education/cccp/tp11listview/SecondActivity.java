@@ -40,10 +40,9 @@ public class SecondActivity extends AppCompatActivity {
                                                 int index,
                                                 long l) -> {
             //retrieve person's clicked
-            setResult(RESULT_OK,
-                    new Intent().putExtra(
-                            CURRENT_PERSON_KEY,
-                            findAll().get(index)));
+            setResult(RESULT_OK, new Intent()
+                    .putExtra(CURRENT_PERSON_KEY, findAll().get(index))
+                    .putExtra(CURRENT_PERSON_INDEX_KEY, index));
             finish();
         });
     }
