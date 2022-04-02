@@ -23,7 +23,6 @@ public class SecondActivity extends AppCompatActivity {
 
     public static final String CURRENT_PERSON_KEY = "current_person_key";
     public static final String CURRENT_PERSON_INDEX_KEY = "current_person_index_key";
-    private Person currentPerson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +40,10 @@ public class SecondActivity extends AppCompatActivity {
                                                 int index,
                                                 long l) -> {
             //retrieve person's clicked
-            setResult(RESULT_OK, new Intent().putExtra(
-                    CURRENT_PERSON_KEY,
-                    findAll().get(index)));
+            setResult(RESULT_OK,
+                    new Intent().putExtra(
+                            CURRENT_PERSON_KEY,
+                            findAll().get(index)));
             finish();
         });
     }
