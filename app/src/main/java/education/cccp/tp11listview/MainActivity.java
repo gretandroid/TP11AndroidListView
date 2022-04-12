@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,16 +51,19 @@ public class MainActivity extends AppCompatActivity {
         personLastNameEditText = findViewById(editTextPersonLastNameId);
         intentActivityResultLauncher = registerForActivityResult(
                 new StartActivityForResult(),
-                (ActivityResult activityResult) -> {
-                    Intent data = activityResult.getData();
-                    if (activityResult.getResultCode() == RESULT_OK) {
-                        Person person = (Person) Objects.requireNonNull(data)
-                                .getSerializableExtra(CURRENT_PERSON_KEY);
-                        setEditTextPersonFields(person.getFirstName(),
-                                person.getLastName());
-                        currentIndex = data.getIntExtra(
-                                CURRENT_PERSON_INDEX_KEY,
-                                OUT_OF_BOUND_INDEX);
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult activityResult) {
+                        Intent data = activityResult.getData();
+                        if (activityResult.getResultCode() == RESULT_OK) {
+                            Person person = (Person) Objects.requireNonNull(data)
+                                    .getSerializableExtra(CURRENT_PERSON_KEY);
+                            MainActivity.this.setEditTextPersonFields(person.getFirstName(),
+                                    person.getLastName());
+                            currentIndex = data.getIntExtra(
+                                    CURRENT_PERSON_INDEX_KEY,
+                                    OUT_OF_BOUND_INDEX);
+                        }
                     }
                 }
         );
